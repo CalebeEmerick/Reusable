@@ -24,12 +24,12 @@ extension TableViewReusable where Self : UITableView {
         self.register(nib, forCellReuseIdentifier: T.identifier)
     }
     
-    func register<T: UIView>(viewClass: T.Type) where T: Reusable {
+    func register<T: UITableViewHeaderFooterView>(viewClass: T.Type) where T: Reusable {
         
         self.register(T.self, forHeaderFooterViewReuseIdentifier: T.identifier)
     }
     
-    func register<T: UIView>(viewNib: T.Type) where T: Reusable {
+    func register<T: UITableViewHeaderFooterView>(viewNib: T.Type) where T: Reusable {
         
         let nib = nibCreator(bundle: T.self)
         
