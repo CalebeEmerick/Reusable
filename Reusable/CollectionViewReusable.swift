@@ -50,3 +50,5 @@ public extension CollectionViewReusable where Self : UICollectionView {
         return view
     }
 }
+
+extension UICollectionView : CollectionViewReusable { }
