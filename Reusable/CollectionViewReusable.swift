@@ -8,9 +8,9 @@
 
 import UIKit
 
-protocol CollectionViewReusable : NibCreatable { }
+public protocol CollectionViewReusable : NibCreatable { }
 
-extension CollectionViewReusable where Self : UICollectionView {
+public extension CollectionViewReusable where Self : UICollectionView {
 
     func register<T: UICollectionViewCell>(cellClass: T.Type) where T: Reusable {
         

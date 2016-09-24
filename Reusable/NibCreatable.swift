@@ -8,12 +8,12 @@
 
 import UIKit
 
-protocol NibCreatable {
+public protocol NibCreatable {
 
     func createNib<T: UIView>(bundle: T.Type) -> UINib where T: Reusable
 }
 
-extension NibCreatable {
+public extension NibCreatable {
     
     func createNib<T: UIView>(bundle: T.Type) -> UINib where T: Reusable {
         

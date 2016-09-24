@@ -8,9 +8,9 @@
 
 import UIKit
 
-protocol TableViewReusable : NibCreatable { }
+public protocol TableViewReusable : NibCreatable { }
 
-extension TableViewReusable where Self : UITableView {
+public extension TableViewReusable where Self : UITableView {
     
     func register<T: UITableViewCell>(cellClass: T.Type) where T: Reusable {
         
