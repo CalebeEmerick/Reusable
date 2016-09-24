@@ -10,6 +10,7 @@
 		341583CE1D96E144001A9D65 /* Reusable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 341583C41D96E144001A9D65 /* Reusable.framework */; };
 		341583D31D96E144001A9D65 /* ReusableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341583D21D96E144001A9D65 /* ReusableTests.swift */; };
 		341583D51D96E144001A9D65 /* Reusable.h in Headers */ = {isa = PBXBuildFile; fileRef = 341583C71D96E144001A9D65 /* Reusable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		341583E61D96F3CC001A9D65 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341583E51D96F3CC001A9D65 /* Reusable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		341583CD1D96E144001A9D65 /* ReusableTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReusableTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		341583D21D96E144001A9D65 /* ReusableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableTests.swift; sourceTree = "<group>"; };
 		341583D41D96E144001A9D65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		341583E51D96F3CC001A9D65 /* Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 		341583C61D96E144001A9D65 /* Reusable */ = {
 			isa = PBXGroup;
 			children = (
+				341583E41D96F3BB001A9D65 /* Protocol */,
 				341583DE1D96E1BC001A9D65 /* Supporting Files */,
 			);
 			path = Reusable;
@@ -92,6 +95,14 @@
 				341583C81D96E144001A9D65 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		341583E41D96F3BB001A9D65 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				341583E51D96F3CC001A9D65 /* Reusable.swift */,
+			);
+			name = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,6 +216,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				341583E61D96F3CC001A9D65 /* Reusable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,6 +380,7 @@
 		341583DC1D96E144001A9D65 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = ReusableTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.codellamas.ReusableTests;
@@ -379,6 +392,7 @@
 		341583DD1D96E144001A9D65 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = ReusableTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.codellamas.ReusableTests;
@@ -406,6 +420,7 @@
 				341583DA1D96E144001A9D65 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		341583DB1D96E144001A9D65 /* Build configuration list for PBXNativeTarget "ReusableTests" */ = {
 			isa = XCConfigurationList;
@@ -414,6 +429,7 @@
 				341583DD1D96E144001A9D65 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
