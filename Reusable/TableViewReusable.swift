@@ -61,3 +61,5 @@ extension TableViewReusable {
         return nib
     }
 }
+
+extension UITableView : TableViewReusable { }
