@@ -35,6 +35,20 @@ extension TableViewReusable where Self : UITableView {
         
         self.register(nib, forHeaderFooterViewReuseIdentifier: T.identifier)
     }
+    
+    func dequeueReusableCell<T: UITableViewCell>(indexPath: IndexPath) -> T where T: Reusable {
+        
+        let cell = dequeueReusableCell(withIdentifier: T.identifier, for: indexPath) as! T
+        
+        return cell
+    }
+    
+    func dequeueReusableView<T: UITableViewHeaderFooterView>() -> T where T: Reusable {
+        
+        let view = dequeueReusableHeaderFooterView(withIdentifier: T.identifier) as! T
+        
+        return view
+    }
 }
 
 extension TableViewReusable {
