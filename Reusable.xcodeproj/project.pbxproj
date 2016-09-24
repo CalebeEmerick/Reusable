@@ -12,6 +12,7 @@
 		341583D51D96E144001A9D65 /* Reusable.h in Headers */ = {isa = PBXBuildFile; fileRef = 341583C71D96E144001A9D65 /* Reusable.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		341583E61D96F3CC001A9D65 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341583E51D96F3CC001A9D65 /* Reusable.swift */; };
 		341583E81D96FF79001A9D65 /* TableViewReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341583E71D96FF79001A9D65 /* TableViewReusable.swift */; };
+		341584241D9727D0001A9D65 /* CollectionViewReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341584231D9727D0001A9D65 /* CollectionViewReusable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +34,7 @@
 		341583D41D96E144001A9D65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		341583E51D96F3CC001A9D65 /* Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		341583E71D96FF79001A9D65 /* TableViewReusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewReusable.swift; sourceTree = "<group>"; };
+		341584231D9727D0001A9D65 /* CollectionViewReusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewReusable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 			children = (
 				341583E51D96F3CC001A9D65 /* Reusable.swift */,
 				341583E71D96FF79001A9D65 /* TableViewReusable.swift */,
+				341584231D9727D0001A9D65 /* CollectionViewReusable.swift */,
 			);
 			name = Protocol;
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				341584241D9727D0001A9D65 /* CollectionViewReusable.swift in Sources */,
 				341583E81D96FF79001A9D65 /* TableViewReusable.swift in Sources */,
 				341583E61D96F3CC001A9D65 /* Reusable.swift in Sources */,
 			);
