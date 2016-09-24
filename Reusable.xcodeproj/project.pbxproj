@@ -71,8 +71,7 @@
 		341583C61D96E144001A9D65 /* Reusable */ = {
 			isa = PBXGroup;
 			children = (
-				341583C71D96E144001A9D65 /* Reusable.h */,
-				341583C81D96E144001A9D65 /* Info.plist */,
+				341583DE1D96E1BC001A9D65 /* Supporting Files */,
 			);
 			path = Reusable;
 			sourceTree = "<group>";
@@ -84,6 +83,15 @@
 				341583D41D96E144001A9D65 /* Info.plist */,
 			);
 			path = ReusableTests;
+			sourceTree = "<group>";
+		};
+		341583DE1D96E1BC001A9D65 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				341583C71D96E144001A9D65 /* Reusable.h */,
+				341583C81D96E144001A9D65 /* Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +156,7 @@
 				TargetAttributes = {
 					341583C31D96E144001A9D65 = {
 						CreatedOnToolsVersion = 8.1;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
 					341583CC1D96E144001A9D65 = {
@@ -320,6 +329,7 @@
 		341583D91D96E144001A9D65 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -331,6 +341,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.codellamas.Reusable;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -338,6 +349,7 @@
 		341583DA1D96E144001A9D65 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
