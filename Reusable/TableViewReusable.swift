@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol TableViewReusable { }
+protocol TableViewReusable : NibCreatable { }
 
 extension TableViewReusable where Self : UITableView {
     
@@ -19,7 +19,7 @@ extension TableViewReusable where Self : UITableView {
     
     func register<T: UITableViewCell>(cellNib: T.Type) where T: Reusable {
         
-        let nib = nibCreator(bundle: T.self)
+        let nib = createNib(bundle: T.self)
         
         self.register(nib, forCellReuseIdentifier: T.identifier)
     }
@@ -31,7 +31,7 @@ extension TableViewReusable where Self : UITableView {
     
     func register<T: UITableViewHeaderFooterView>(viewNib: T.Type) where T: Reusable {
         
-        let nib = nibCreator(bundle: T.self)
+        let nib = createNib(bundle: T.self)
         
         self.register(nib, forHeaderFooterViewReuseIdentifier: T.identifier)
     }
@@ -48,17 +48,6 @@ extension TableViewReusable where Self : UITableView {
         let view = dequeueReusableHeaderFooterView(withIdentifier: T.identifier) as! T
         
         return view
-    }
-}
-
-extension TableViewReusable {
-    
-    fileprivate func nibCreator<T: UIView>(bundle: T.Type) -> UINib where T: Reusable {
-        
-        let bundle = Bundle(for: bundle.self)
-        let nib = UINib(nibName: T.identifier, bundle: bundle)
-        
-        return nib
     }
 }
 
