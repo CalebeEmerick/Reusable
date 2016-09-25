@@ -8,16 +8,21 @@
 
 import UIKit
 
+/// `NibCreatable` provides an easy way to create Nibs.
 public protocol NibCreatable {
 
-    func createNib<T: UIView>(bundle: T.Type) -> UINib where T: Reusable
+    func createNib<T: UIView>(type: T.Type) -> UINib where T: Reusable
 }
 
 public extension NibCreatable {
     
-    func createNib<T: UIView>(bundle: T.Type) -> UINib where T: Reusable {
+    /// Allows create a `UINib` just passing the `class` type.
+    ///
+    /// - Parameter type: The type to create the `UINib`.
+    /// - Returns: Returns a `UINib`.
+    func createNib<T: UIView>(type: T.Type) -> UINib where T: Reusable {
         
-        let bundle = Bundle(for: bundle.self)
+        let bundle = Bundle(for: type.self)
         let nib = UINib(nibName: T.identifier, bundle: bundle)
         
         return nib

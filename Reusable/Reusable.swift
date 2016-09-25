@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// `Reusable` provides an identifier for every class that inherits from `UIView`.
 public protocol Reusable {
     
     static var identifier: String { get }
@@ -15,6 +16,7 @@ public protocol Reusable {
 
 public extension Reusable where Self : UIView {
     
+    /// Uses the `class` name to provide an identifier.
     static var identifier: String {
         
         return String(describing: self)
