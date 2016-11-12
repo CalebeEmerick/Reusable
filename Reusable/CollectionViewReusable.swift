@@ -85,9 +85,12 @@ public extension CollectionViewReusable where Self : UICollectionView {
     /// - Returns: Returns the reusable `cell` based in its type.
     func dequeueReusableCell<T: UICollectionViewCell>(indexPath: IndexPath) -> T where T: Reusable {
         
-        let cell = dequeueReusableCell(withReuseIdentifier: T.identifier, for: indexPath) as! T
+        if let cell = dequeueReusableCell(withReuseIdentifier: T.identifier, for: indexPath) as? T {
+            
+            return cell
+        }
         
-        return cell
+        fatalError("It was not possible dequeue the cell with identifier: \(T.identifier)")
     }
     
     /// Returns a reusable `view` for the specified `class` and adds it to the collection.
@@ -104,9 +107,12 @@ public extension CollectionViewReusable where Self : UICollectionView {
     /// - Returns: Returns the reusable `view` based in its type.
     func dequeueReusableView<T: UICollectionReusableView>(supplementaryView kind: String, indexPath: IndexPath) -> T where T: Reusable {
         
-        let view = dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: T.identifier, for: indexPath) as! T
+        if let view = dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: T.identifier, for: indexPath) as? T {
+            
+            return view
+        }
         
-        return view
+        fatalError("It was not possible dequeue the view with identifier: \(T.identifier)")
     }
 }
 
