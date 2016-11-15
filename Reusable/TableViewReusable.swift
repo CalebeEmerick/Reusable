@@ -77,12 +77,12 @@ public extension TableViewReusable where Self : UITableView {
     /// - Returns: Returns the reusable `cell` based in its type.
     func dequeueReusableCell<T: UITableViewCell>(for indexPath: IndexPath) -> T where T: Reusable {
         
-        if let cell = dequeueReusableCell(withIdentifier: T.identifier, for: indexPath) as? T {
+        guard let cell = dequeueReusableCell(withIdentifier: T.identifier, for: indexPath) as? T else {
             
-            return cell
+            fatalError("It was not possible dequeue the cell with identifier: \(T.identifier)")
         }
         
-        fatalError("It was not possible dequeue the cell with identifier: \(T.identifier)")
+        return cell
     }
     
     /// Returns a reusable `view` for the specified `class` and adds it to the table.
@@ -94,12 +94,12 @@ public extension TableViewReusable where Self : UITableView {
     /// - Returns: Returns the reusable `view` based in its type.
     func dequeueReusableView<T: UITableViewHeaderFooterView>() -> T where T: Reusable {
         
-        if let view = dequeueReusableHeaderFooterView(withIdentifier: T.identifier) as? T {
+        guard let view = dequeueReusableHeaderFooterView(withIdentifier: T.identifier) as? T else {
             
-            return view
+            fatalError("It was not possible dequeue the view with identifier: \(T.identifier)")
         }
         
-        fatalError("It was not possible dequeue the view with identifier: \(T.identifier)")
+        return view
     }
 }
 
