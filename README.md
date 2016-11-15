@@ -52,13 +52,13 @@ func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) ->
 
 func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
  
-   if kind == UICollectionElementKindSectionFooter {
-
-        let footer: CustomCollectionViewFooter = collectionView.dequeueReusableView(ofKind: UICollectionElementKindSectionFooter, for: indexPath)
-        return footer
+   guard kind == UICollectionElementKindSectionFooter else {
+	   
+        fatalError("It should show the CollectionView Footer, not enter here... 😐")
     }
-
-    fatalError("It should show the CollectionView Footer, not enter here... 😐")
+	
+    let footer: CustomCollectionViewFooter = collectionView.dequeueReusableView(ofKind: UICollectionElementKindSectionFooter, for: indexPath)
+    return footer
 }
 ```
 
