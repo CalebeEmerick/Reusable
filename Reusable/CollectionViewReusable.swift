@@ -48,7 +48,7 @@ public extension CollectionViewReusable where Self : UICollectionView {
     /// - Parameters:
     ///   - viewClass: The `view` type to be used as header of footer in the `UICollectionView`.
     ///   - kind: The `String` defined to represent header or footer.
-    func register<T: UICollectionReusableView>(viewClass: T.Type, supplementaryView kind: String) where T: Reusable {
+    func register<T: UICollectionReusableView>(viewClass: T.Type, ofKind kind: String) where T: Reusable {
         
         self.register(T.self, forSupplementaryViewOfKind: kind, withReuseIdentifier: T.identifier)
     }
@@ -68,7 +68,7 @@ public extension CollectionViewReusable where Self : UICollectionView {
     /// - Parameters:
     ///   - viewNib: The `view` type to be used as header of footer in the `UICollectionView`.
     ///   - kind: The `String` defined to represent header or footer.
-    func register<T: UICollectionReusableView>(viewNib: T.Type, supplementaryView kind: String) where T: Reusable {
+    func register<T: UICollectionReusableView>(viewNib: T.Type, ofKind kind: String) where T: Reusable {
         
         let nib = makeNib(for: T.self)
         
