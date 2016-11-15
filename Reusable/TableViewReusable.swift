@@ -30,7 +30,7 @@ public extension TableViewReusable where Self : UITableView {
     /// - Parameter cellNib: The `cell` type to be used in the `UITableView`.
     func register<T: UITableViewCell>(cellNib: T.Type) where T: Reusable {
         
-        let nib = createNib(type: T.self)
+        let nib = makeNib(for: T.self)
         
         self.register(nib, forCellReuseIdentifier: T.identifier)
     }
@@ -62,7 +62,7 @@ public extension TableViewReusable where Self : UITableView {
     /// - Parameter viewNib: The `view` type to be used as header of footer in the `UITableView`.
     func register<T: UITableViewHeaderFooterView>(viewNib: T.Type) where T: Reusable {
         
-        let nib = createNib(type: T.self)
+        let nib = makeNib(for: T.self)
         
         self.register(nib, forHeaderFooterViewReuseIdentifier: T.identifier)
     }
@@ -75,7 +75,7 @@ public extension TableViewReusable where Self : UITableView {
     ///
     /// - Parameter indexPath: The `IndexPath` provided by the `UITableView` method.
     /// - Returns: Returns the reusable `cell` based in its type.
-    func dequeueReusableCell<T: UITableViewCell>(indexPath: IndexPath) -> T where T: Reusable {
+    func dequeueReusableCell<T: UITableViewCell>(for indexPath: IndexPath) -> T where T: Reusable {
         
         if let cell = dequeueReusableCell(withIdentifier: T.identifier, for: indexPath) as? T {
             

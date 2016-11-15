@@ -30,7 +30,7 @@ public extension CollectionViewReusable where Self : UICollectionView {
     /// - Parameter cellNib: The `cell` type to be used in the `UICollectionView`.
     func register<T: UICollectionViewCell>(cellNib: T.Type) where T: Reusable {
         
-        let nib = createNib(type: T.self)
+        let nib = makeNib(for: T.self)
         
         self.register(nib, forCellWithReuseIdentifier: T.identifier)
     }
@@ -70,7 +70,7 @@ public extension CollectionViewReusable where Self : UICollectionView {
     ///   - kind: The `String` defined to represent header or footer.
     func register<T: UICollectionReusableView>(viewNib: T.Type, supplementaryView kind: String) where T: Reusable {
         
-        let nib = createNib(type: T.self)
+        let nib = makeNib(for: T.self)
         
         self.register(nib, forSupplementaryViewOfKind: kind, withReuseIdentifier: T.identifier)
     }
@@ -83,7 +83,7 @@ public extension CollectionViewReusable where Self : UICollectionView {
     ///
     /// - Parameter indexPath: The `IndexPath` provided by the `UICollectionView` method.
     /// - Returns: Returns the reusable `cell` based in its type.
-    func dequeueReusableCell<T: UICollectionViewCell>(indexPath: IndexPath) -> T where T: Reusable {
+    func dequeueReusableCell<T: UICollectionViewCell>(for indexPath: IndexPath) -> T where T: Reusable {
         
         if let cell = dequeueReusableCell(withReuseIdentifier: T.identifier, for: indexPath) as? T {
             
@@ -105,7 +105,7 @@ public extension CollectionViewReusable where Self : UICollectionView {
     ///   - kind: The `String` defined to represent header or footer.
     ///   - indexPath: The `IndexPath` provided by the `UICollectionView` method.
     /// - Returns: Returns the reusable `view` based in its type.
-    func dequeueReusableView<T: UICollectionReusableView>(supplementaryView kind: String, indexPath: IndexPath) -> T where T: Reusable {
+    func dequeueReusableView<T: UICollectionReusableView>(ofKind kind: String, for indexPath: IndexPath) -> T where T: Reusable {
         
         if let view = dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: T.identifier, for: indexPath) as? T {
             

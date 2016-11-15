@@ -3,7 +3,7 @@ Reusable makes easy register and dequeue cells and views.
 
 ## Instalation
   - If you use `xcworkspace`, just download and put the project inside it.
-  - Otherwise you can create an folder and drop the files there.
+  - Otherwise, you can create a folder and drop the files there.
 
 ## Usage
   
