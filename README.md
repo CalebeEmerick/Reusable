@@ -11,23 +11,57 @@ Reusable makes easy register and dequeue cells and views.
 
 You should register the cells or views before dequeue it.
 
-- When your Cell and/or View is separated from the Storyboard:
 ```swift
-tableView.register(cellNib: YourCell.self)
-tableView.register(viewNib: YourView.self)
-collectionView.register(cellNib: YourCell.self)
-collectionView.register(viewNib: YourView.self)
-```
-- When your cell and/or View is coupled with Storyboard:
-```swift
-tableView.register(cellClass: YourCell.self)
-tableView.register(viewClass: YourView.self)
-collectionView.register(cellClass: YourCell.self)
-collectionView.register(viewClass: YourView.self)
+override func viewDidLoad() {
+	super.viewDidLoad()
+	
+	// cells
+	tableView.register(cellNib: MyCustomTableViewCell.self)
+	collectionView.register(cellNib: MyCustomCollectionViewCell.self)
+	
+	// views
+	tableView.register(viewNib: CustomTableViewHeader.self)
+	collectionView.register(viewNib: CustomCollectionViewFooter.self, ofKind: UICollectionElementKindSectionFooter)
+}
 ```
 
 **Dequeue**
 
 ```swift
-tableView.dequeueReusableCell(indexPath: indexPath)
+// cells
+
+func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    
+	let cell: MyCustomTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+    return cell
+}
+
+func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    
+    let cell: MyCustomCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
+    return cell
+}
+
+// views
+
+func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    
+    let headerView: CustomTableViewHeader = tableView.dequeueReusableView()
+    return headerView
+}
+
+func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+ 
+   if kind == UICollectionElementKindSectionFooter {
+
+        let footer: CustomCollectionViewFooter = collectionView.dequeueReusableView(ofKind: UICollectionElementKindSectionFooter, for: indexPath)
+        return footer
+    }
+
+    fatalError("It should show the CollectionView Footer, not enter here... 😐")
+}
 ```
+
+## License
+
+Reusable is released under the MIT license. See LICENSE for details.
