@@ -1,5 +1,5 @@
 # Reusable
-Reusable makes easy register and dequeue cells and views.
+Reusable makes easy to register and dequeue cells and views.
 
 ## Instalation
   - If you use `xcworkspace`, just download and put the project inside it.
